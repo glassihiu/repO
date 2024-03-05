@@ -18,3 +18,14 @@ if (!line.compare(0, 2, "v ")) {
             iss >> trash;
             int cnt = 0;
 //hello
+ while (iss >> f >> trash >> t >> trash >> n) {
+                facet_vrt.push_back(--f);
+                facet_tex.push_back(--t);
+                facet_nrm.push_back(--n);
+                cnt++;
+            }
+            if (3!=cnt) {
+                std::cerr << "Error: the obj file is supposed to be triangulated" << std::endl;
+                return;
+            }
+        }
